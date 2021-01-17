@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Dicee</title>
+
+   
+
+  </head>
+
+  <style>
+
+      body{
+
+    background-color:lightseagreen;
+
+}
+
+.game{
+
+    width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+}
+
+.dice{
+
+    margin:0px 50px; 
+
+    text-align:center;
+
+    display:inline-block;
+
+    font-size: 20px;
+
+}
+
+h1{
+
+    font-size: 50px;
+
+    color:aquamarine;
+
+    text-align: center;
+
+}
+
+img{
+
+    width:200px;
+
+}
+
+p{
+
+    font-size: 20px;
+
+    font-style:times new roman;
+
+}
+
+.container{
+
+    display:grid;
+
+    grid-template-columns: 30% 40% 30%;
+
+}
+
+  </style>
+
+<script>
+
+    var images=["dice1.png", "dice2.png","dice3.png","dice4.png","dice5.png","dice6.png"];
+
+    function startgame(){
+
+    var player1=Math.floor(Math.random()*6);
+
+    var player2=Math.floor(Math.random()*6);
+
+    if(player1>player2){
+
+        document.getElementById("result").innerHTML="Player 1 Wins";
+
+        document.getElementById("play1").src=images[player1];
+
+        document.getElementById("play2").src=images[player2];
+
+        }
+
+    else if(player1<player2){
+
+        document.getElementById("result").innerHTML="Player 2 Wins";
+
+        document.getElementById("play1").src=images[player1];
+
+        document.getElementById("play2").src=images[player2];
+
+        }
+
+    else{
+
+        document.getElementById("result").innerHTML="Draw";
+
+        document.getElementById("play1").src=images[player1];
+
+        document.getElementById("play2").src=images[player2];
+
+    }
+
+}
+
+</script>
+
+  <body>
+
+      
+
+            <div class="game">
+
+                 <h1>Start a game</h1>
+
+                    <p id="result"></p>
+
+                    <div class="container">
+
+                        <div class="dice">
+
+                            <p>Player 1</p>
+
+                            <img class="img1" src="Dice6.png" id="play1">
+
+                            </div>
+
+                    <div style="margin-top: 200px;"><button onclick="startgame()">PLAY</button></div>
+
+                    <div class="dice" >
+
+                        <p>Player 2</p>
+
+                        <img class="img2" src="Dice6.png" id="play2">
+
+                    </div>
+
+                    </div>
+
+            </div>
+
+  </body>
+
+</html>
